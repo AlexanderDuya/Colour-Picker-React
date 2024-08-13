@@ -1,16 +1,38 @@
-body{
+/* Styles for the entire body */
+body {
   font-family: Arial, sans-serif;
+  background-color: hsl(0, 0%, 95%);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
-.color-picker-container{
+
+/* Container for the Color Picker component */
+.color-picker-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  width: 400px; /* Set a fixed width for the container */
+  max-height: 90vh; /* Ensure the container doesn't exceed the viewport height */
+  overflow-y: auto; /* Allow vertical scrolling if content exceeds the container height */
 }
-h1{
-  margin: 50px;
-  font-size: 3rem;
+
+/* Header styling */
+h1 {
+  margin: 20px 0;
+  font-size: 2.5rem;
+  color: hsl(210, 50%, 30%);
 }
-.color-display{
+
+/* Display box for the selected color */
+.color-display {
   width: 300px;
   height: 300px;
   display: flex;
@@ -21,20 +43,112 @@ h1{
   margin-bottom: 25px;
   transition: 0.25s ease;
 }
-.color-display p{
+
+/* Text inside the color display */
+.color-display p {
   color: hsl(0, 0%, 20%);
   font-size: 2rem;
   text-align: center;
+  font-weight: bold;
 }
-label{
+
+/* Label for the color input */
+label {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 10px;
 }
-input[type="color"]{
+
+/* Styling for the color input element */
+input[type="color"] {
   width: 75px;
   height: 50px;
   padding: 5px;
   border-radius: 10px;
   border: 3px solid hsl(0, 0%, 80%);
+  cursor: pointer;
+}
+
+/* Button to add color to favorites */
+button {
+  background-color: hsl(210, 50%, 50%);
+  color: white;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px; /* Add space between buttons and sections */
+}
+
+/* Hover effect for the button */
+button:hover {
+  background-color: hsl(210, 50%, 40%);
+}
+
+/* Heading for the favorites list */
+h2 {
+  margin-top: 40px;
+  font-size: 2rem;
+  color: hsl(210, 50%, 30%);
+}
+
+/* List of favorite colors and history */
+ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Individual favorite color item */
+ul li {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+/* Text inside the favorite color item */
+ul li p {
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+/* Remove button inside each favorite color */
+ul li button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  color: white;
+  font-size: 0.8rem;
+  padding: 3px 7px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the remove button */
+ul li button:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Styling for the color history section */
+.color-history {
+  max-height: 150px; /* Restrict the height of the history section */
+  overflow-y: auto; /* Make the history section scrollable if content exceeds the height */
+  width: 100%; /* Ensure the history section spans the full width of the container */
+  margin-bottom: 20px; /* Add space below the history section */
 }
