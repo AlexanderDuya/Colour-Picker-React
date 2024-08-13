@@ -19,7 +19,7 @@ body {
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-  width: 400px; /* Set a fixed width for the container */
+  width: 800px; /* Set a fixed width for the container */
   max-height: 90vh; /* Ensure the container doesn't exceed the viewport height */
   overflow-y: auto; /* Allow vertical scrolling if content exceeds the container height */
 }
@@ -152,3 +152,185 @@ ul li button:hover {
   width: 100%; /* Ensure the history section spans the full width of the container */
   margin-bottom: 20px; /* Add space below the history section */
 }
+/* Additional styling for color schemes */
+.color-schemes {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.color-swatch {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 10px;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.color-swatch:hover {
+  transform: scale(1.1);
+}
+
+.color-row {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Additional styling for color history */
+.color-history {
+  max-height: 150px; /* Restrict the height of the history section */
+  overflow-y: auto; /* Make the history section scrollable if content exceeds the height */
+  width: 100%; /* Ensure the history section spans the full width of the container */
+  margin-bottom: 20px; /* Add space below the history section */
+}
+
+/* Color swatches styling */
+.color-swatch {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 10px;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.color-swatch:hover {
+  transform: scale(1.1);
+}
+
+.color-row {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Container for the main content and color history */
+.color-picker-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+/* Main content area for the color picker */
+.color-picker-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Container for the color history box */
+.color-history-container {
+  width: 250px; /* Adjust width as needed */
+  padding: 20px;
+  border-left: 2px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Box to display the current color */
+.color-history-box {
+  width: 200px;
+  height: 200px;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Ensure the color history title is centered */
+.color-history-container h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+/* Container for the main content and color history */
+.color-picker-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+/* Main content area for the color picker */
+.color-picker-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Container for the color history box */
+.color-history-container {
+  width: 250px; /* Adjust width as needed */
+  padding: 20px;
+  border-left: 2px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Box to display the current color */
+.color-history-box {
+  width: 200px;
+  height: 200px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Ensure the color history title is centered */
+.color-history-container h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+/* Styling for color harmonies titles */
+.color-title {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Styling for color swatches */
+.color-swatch {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 10px;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.color-swatch:hover {
+  transform: scale(1.1);
+}
+
+/* Styling for color rows */
+.color-row {
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  margin-bottom: 20px;
+}
+
+/* Styling for color picker input */
+input[type="color"] {
+  width: 75px;
+  height: 50px;
+  padding: 5px;
+  border-radius: 10px;
+  border: 3px solid hsl(0, 0%, 80%);
+}
+
