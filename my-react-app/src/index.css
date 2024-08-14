@@ -13,15 +13,24 @@ body {
 /* Container for the Color Picker component */
 .color-picker-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: white;
+  flex-direction: row; /* Align items horizontally */
+  justify-content: space-between; /* Distribute space between main and history sections */
   padding: 20px;
+  background-color: white;
   border-radius: 15px;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-  width: 800px; /* Set a fixed width for the container */
+  width: 80vw; /* Adjust width as needed */
+  max-width: 1200px; /* Prevents exceeding a maximum width */
   max-height: 90vh; /* Ensure the container doesn't exceed the viewport height */
   overflow-y: auto; /* Allow vertical scrolling if content exceeds the container height */
+}
+
+/* Main content area for the color picker */
+.color-picker-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Header styling */
@@ -29,6 +38,7 @@ h1 {
   margin: 20px 0;
   font-size: 2.5rem;
   color: hsl(210, 50%, 30%);
+  text-align: center;
 }
 
 /* Display box for the selected color */
@@ -145,165 +155,21 @@ ul li button:hover {
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-/* Styling for the color history section */
-.color-history {
-  max-height: 150px; /* Restrict the height of the history section */
-  overflow-y: auto; /* Make the history section scrollable if content exceeds the height */
-  width: 100%; /* Ensure the history section spans the full width of the container */
-  margin-bottom: 20px; /* Add space below the history section */
-}
-/* Additional styling for color schemes */
+/* Styling for the color harmonies section */
 .color-schemes {
   margin-top: 20px;
   width: 100%;
 }
 
-.color-swatch {
-  padding: 10px;
-  margin: 5px;
-  border-radius: 10px;
-  color: #fff;
+/* Centered titles for color harmonies */
+.color-title {
   text-align: center;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.color-swatch:hover {
-  transform: scale(1.1);
-}
-
-.color-row {
-  display: flex;
-  justify-content: space-around;
-}
-
-/* Additional styling for color history */
-.color-history {
-  max-height: 150px; /* Restrict the height of the history section */
-  overflow-y: auto; /* Make the history section scrollable if content exceeds the height */
-  width: 100%; /* Ensure the history section spans the full width of the container */
-  margin-bottom: 20px; /* Add space below the history section */
+  font-size: 1.5rem;
+  margin: 20px 0;
+  color: hsl(210, 50%, 30%);
 }
 
 /* Color swatches styling */
-.color-swatch {
-  padding: 10px;
-  margin: 5px;
-  border-radius: 10px;
-  color: #fff;
-  text-align: center;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.color-swatch:hover {
-  transform: scale(1.1);
-}
-
-.color-row {
-  display: flex;
-  justify-content: space-around;
-}
-
-/* Container for the main content and color history */
-.color-picker-container {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-}
-
-/* Main content area for the color picker */
-.color-picker-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Container for the color history box */
-.color-history-container {
-  width: 250px; /* Adjust width as needed */
-  padding: 20px;
-  border-left: 2px solid #ddd;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Box to display the current color */
-.color-history-box {
-  width: 200px;
-  height: 200px;
-  border: 2px solid #ffffff;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  text-align: center;
-  margin-top: 10px;
-}
-
-/* Ensure the color history title is centered */
-.color-history-container h2 {
-  margin-bottom: 20px;
-  font-size: 1.5rem;
-}
-
-/* Container for the main content and color history */
-.color-picker-container {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-}
-
-/* Main content area for the color picker */
-.color-picker-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Container for the color history box */
-.color-history-container {
-  width: 250px; /* Adjust width as needed */
-  padding: 20px;
-  border-left: 2px solid #ddd;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Box to display the current color */
-.color-history-box {
-  width: 200px;
-  height: 200px;
-  border: 2px solid #ddd;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  text-align: center;
-  margin-top: 10px;
-}
-
-/* Ensure the color history title is centered */
-.color-history-container h2 {
-  margin-bottom: 20px;
-  font-size: 1.5rem;
-}
-
-/* Styling for color harmonies titles */
-.color-title {
-  text-align: center;
-  margin: 10px 0;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-/* Styling for color swatches */
 .color-swatch {
   padding: 10px;
   margin: 5px;
@@ -325,12 +191,102 @@ ul li button:hover {
   margin-bottom: 20px;
 }
 
-/* Styling for color picker input */
-input[type="color"] {
-  width: 75px;
-  height: 50px;
-  padding: 5px;
-  border-radius: 10px;
-  border: 3px solid hsl(0, 0%, 80%);
+/* Export section */
+.export-section {
+  text-align: center; /* Center text and buttons */
+  margin-top: 20px;
 }
 
+/* Styling for export instructions text */
+.export-instructions {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: hsl(0, 0%, 40%);
+}
+
+/* Container for export buttons */
+.export-buttons {
+  display: flex;
+  justify-content: center; /* Center buttons horizontally */
+  margin-top: 20px;
+  padding-bottom: 20px; /* Add padding below export buttons */
+}
+
+/* Styling for export buttons */
+.export-buttons button {
+  margin: 0 10px; /* Space between buttons */
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for export buttons */
+.export-buttons button:hover {
+  background-color: #0056b3;
+}
+
+/* Container for the color history box */
+
+
+/* Box to display the current color in color history */
+
+
+/* Ensure the color history title is centered */
+.color-history-container h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.color-history-container {
+  width: 25%;
+  margin-top: 20px;
+}
+
+.color-history-list {
+  display: flex;
+  flex-wrap: wrap; /* Allow boxes to wrap to the next line */
+  gap: 5px; /* Small gap between boxes */
+}
+
+.color-history-box {
+  width: 30px; /* Smaller box width */
+  height: 30px; /* Smaller box height */
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 8px; /* Smaller text to fit the smaller box */
+  text-align: center;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+  margin-bottom: 5px; /* Small margin below each box */
+}
+
+.color-history-container {
+  width: 25%;
+  margin-top: 20px;
+}
+
+.color-history-list {
+  display: flex;
+  flex-wrap: wrap; /* Allow boxes to wrap to the next line */
+  gap: 5px; /* Small gap between boxes */
+}
+
+.color-history-box {
+  width: 30px; /* Smaller box width */
+  height: 30px; /* Smaller box height */
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 8px; /* Smaller text to fit the smaller box */
+  text-align: center;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+  margin-bottom: 5px; /* Small margin below each box */
+}
