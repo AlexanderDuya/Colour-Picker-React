@@ -290,3 +290,63 @@ ul li button:hover {
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
   margin-bottom: 5px; /* Small margin below each box */
 }
+
+
+
+.color-history-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Space between color history boxes */
+}
+
+.color-history-box {
+  width: 60px; /* Reduced width for compact display */
+  height: 60px; /* Reduced height for compact display */
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 12px; /* Smaller font size */
+  text-align: center;
+  margin: 5px;
+}
+
+.favorite-color-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 5px;
+  color: #fff;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.favorites-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.color-conversion-section {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.color-conversion-section h2 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.color-conversion-section button {
+  margin: 5px;
+}
+
+.color-conversion-section p {
+  margin-top: 10px;
+  text-align: center;
+  font-weight: bold;
+}

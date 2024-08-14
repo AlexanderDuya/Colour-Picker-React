@@ -1,12 +1,36 @@
 import React, { useState } from 'react';
 import tinycolor from 'tinycolor2';
-import './index.css'; // Ensure you import your CSS file
+import axios from 'axios';
+import './index.css';
+
+// Replace with the actual API URL and key
+const API_URL = 'https://api.color-converter.com/convert'; 
+const API_KEY = 'your-api-key'; 
+
+const convertColor = async (color, fromFormat, toFormat) => {
+    try {
+        const response = await axios.get(API_URL, {
+            params: {
+                color,
+                from: fromFormat,
+                to: toFormat,
+                apiKey: API_KEY,
+            },
+        });
+        console.log('API response:', response.data); // Debugging line
+        return response.data.convertedColor; // Adjust according to the API response
+    } catch (error) {
+        console.error('Error converting color:', error);
+        throw error;
+    }
+};
 
 function ColorPicker() {
     const [color, setColor] = useState("#FFFFFF");
     const [favorites, setFavorites] = useState([]);
     const [colorHistory, setColorHistory] = useState([]);
     const [colorScheme, setColorScheme] = useState({});
+    const [convertedColor, setConvertedColor] = useState(null);
 
     function handleColorChange(event) {
         const newColor = event.target.value;
@@ -35,6 +59,16 @@ function ColorPicker() {
             triadic: tc.triad().map(t => t.toHexString()),
             tetradic: tc.tetrad().map(t => t.toHexString())
         });
+    }
+
+    async function handleConvertColor(fromFormat, toFormat) {
+        try {
+            const result = await convertColor(color, fromFormat, toFormat);
+            setConvertedColor(result);
+        } catch (error) {
+            console.error('Conversion failed:', error);
+            setConvertedColor('Conversion failed'); // Update UI to indicate failure
+        }
     }
 
     function exportPalette(format) {
@@ -118,9 +152,9 @@ function ColorPicker() {
                 </div>
 
                 <h2>Favorite Colours</h2>
-                <ul>
+                <ul className="favorites-list">
                     {favorites.map((favColor, index) => (
-                        <li key={index} style={{ backgroundColor: favColor, padding: "10px", margin: "5px", color: "#fff" }}>
+                        <li key={index} className="favorite-color-item" style={{ backgroundColor: favColor }}>
                             {favColor}
                             <button onClick={() => removeFavoriteColor(favColor)}>Remove</button>
                         </li>
@@ -135,6 +169,14 @@ function ColorPicker() {
                         <button onClick={() => exportPalette('json')}>Export as JSON</button>
                         <button onClick={() => exportPalette('css')}>Export as CSS</button>
                     </div>
+                </div>
+
+                {/* Color Conversion Section */}
+                <div className="color-conversion-section">
+                    <h2>Convert Color</h2>
+                    <button onClick={() => handleConvertColor('hex', 'rgb')}>Convert HEX to RGB</button>
+                    <button onClick={() => handleConvertColor('rgb', 'hex')}>Convert RGB to HEX</button>
+                    {convertedColor && <p>Converted Color: {convertedColor}</p>}
                 </div>
             </div>
 
