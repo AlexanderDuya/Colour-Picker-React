@@ -48,26 +48,47 @@ Open your web browser and navigate to http://localhost:3000. You should see the 
 
 Project Structure
 src/: Contains the source code for the application.
+
 components/: Holds reusable React components (if any).
+
 App.js: The main component that renders the entire application.
+
 index.js: The entry point for React to render the app.
+
 index.css: Contains global styles for the app.
+
 ColorPicker.js: The main logic and UI of the color picker.
+
 public/: Contains static files like index.html.
+
 package.json: Lists dependencies and scripts for the application.
+
 Key Components
+
 Color Picker: The main component where users can select colors, view color schemes, and manage favorites.
+
 Color Harmonies: Automatically generated color schemes (complementary, analogous, triadic, tetradic) displayed to the user.
+
 Favorites: A list where users can store and manage their favorite colors.
+
 Color History: Displays all the colors the user has selected during their session.
+
 Export Palette: Allows users to export their selected colors in JSON or CSS format.
+
 Customization
+
 CSS: You can modify the index.css file to change the look and feel of the application.
+
 Logic: You can enhance or modify the color harmony logic in ColorPicker.js using the tinycolor2 library.
+
 Dependencies
+
 React: A JavaScript library for building user interfaces.
+
 tinycolor2: A small color manipulation and conversion library for generating color schemes.
+
 Exporting Palette
+
 The application allows users to export their color palette in two formats:
 
 JSON: Contains the selected color, favorite colors, color history, and generated color schemes.
