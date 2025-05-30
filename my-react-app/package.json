@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://alexanderduya.github.io/React-Project",
+  "homepage": "https://alexanderduya.github.io/Colour-Picker-React",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
