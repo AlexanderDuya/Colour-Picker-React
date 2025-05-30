@@ -1,15 +1,8 @@
-// vite.config.js
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
 export default defineConfig({
+  base: "/Colour-Picker-React/", // <-- set this if deploying to GitHub Pages repo subpath
   plugins: [react()],
-  build: {
-    outDir: 'dist', // The output directory for the build files
-    rollupOptions: {
-      input: {
-        main: 'public/index.html', // Ensure the entry point is correctly set
-      },
-    },
-  },
+  // remove the entire build.rollupOptions.input part
 });
